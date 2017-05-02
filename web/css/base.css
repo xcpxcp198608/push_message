@@ -1,0 +1,47 @@
+div,body,table,a,img,ul,li{
+    padding: 0;
+    margin: 0;
+}
+
+.img {
+    width: 150px;
+}
+
+#head {
+    width: 100%;
+    height: 70px;
+    background-color: cornflowerblue;
+}
+
+#title {
+    display: block;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+#add {
+    display: block;
+    float: right;
+}
+
+#content {
+    width: 1200px;
+    min-height: 530px;
+    margin: auto;
+}
+
+#login {
+    position: fixed;
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+}
+
+.input {
+    font-size: 20px;
+}

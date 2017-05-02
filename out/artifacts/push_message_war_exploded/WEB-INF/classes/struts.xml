@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="default" extends="struts-default" namespace="/">
+
+        <action name="login" class="com.wiatec.push_message.controller.ActionManager" method="login">
+            <result name="success" type="redirectAction">show</result>
+            <result name="failure">index.jsp</result>
+        </action>
+
+        <action name="*" class="com.wiatec.push_message.controller.ActionPushMessage" method="{1}">
+            <result name="{1}">/WEB-INF/jsp/{1}.jsp</result>
+            <result name="delete" type="redirectAction">show</result>
+            <result name="upload">/WEB-INF/jsp/edit.jsp</result>
+            <result name="update" type="redirectAction">show</result>
+        </action>
+    </package>
+
+</struts>
