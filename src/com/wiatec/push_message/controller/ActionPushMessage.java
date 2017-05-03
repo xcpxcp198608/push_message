@@ -34,6 +34,13 @@ public class ActionPushMessage extends BaseAction {
         out.close();
     }
 
+    public void getAd(){
+        pushMessageInfoList = pushMessageService.getPushMessageByUserName("wiatecpush");
+        out.println(JSONArray.fromObject(pushMessageInfoList));
+        out.flush();
+        out.close();
+    }
+
     public String show(){
         checkSession();
         pushMessageInfoList = pushMessageService.getPushMessageByUserName(userName);

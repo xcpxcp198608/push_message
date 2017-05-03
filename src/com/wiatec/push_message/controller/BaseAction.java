@@ -27,8 +27,8 @@ public class BaseAction implements ServletResponseAware ,ServletRequestAware{
 
     @Override
     public void setServletResponse(HttpServletResponse httpServletResponse) {
-        httpServletResponse.setContentType("text/html ; charset=utf-8");
-        httpServletResponse.setCharacterEncoding("utf-8");
+        httpServletResponse.setContentType("text/html;charset=utf-8");
+        httpServletResponse.setCharacterEncoding("UTF-8");
         response = httpServletResponse;
         try {
             out = httpServletResponse.getWriter();

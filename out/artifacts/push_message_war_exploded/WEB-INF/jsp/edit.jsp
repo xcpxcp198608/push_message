@@ -17,6 +17,7 @@
     <meta http-equiv="expires" content="0">
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="This is my page">
+    <meta http-equiv="charset" content="utf-8"/>
 
     <link rel="stylesheet" type="text/css" href="css/base.css">
 
@@ -30,7 +31,7 @@
 
     <div id="content">
         <a href="${pushMessageInfo.img1}"><img src="${pushMessageInfo.img1}" alt="img1" class="img"/></a>
-        <a href="${pushMessageInfo.img2}"><img src="${pushMessageInfo.img1}" alt="img2" class="img"/></a>
+        <a href="${pushMessageInfo.img2}"><img src="${pushMessageInfo.img2}" alt="img2" class="img"/></a>
         <s:form method="POST" action="upload" namespace="/" enctype="multipart/form-data">
             <s:hidden name="id"/>
             <s:file name="file" label="Image1" />
