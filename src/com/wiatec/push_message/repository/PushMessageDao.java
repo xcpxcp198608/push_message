@@ -27,6 +27,18 @@ public class PushMessageDao extends BaseDao {
     }
 
     @Transactional (readOnly = true)
+    public List<PushMessageInfo> getAnnouncementMessage (){
+        sql = "select * from push_message where userName= ?";
+        return jdbcTemplate.query(sql , pushMessageInfoRowMapper , "Announcement");
+    }
+
+    @Transactional (readOnly = true)
+    public List<PushMessageInfo> getSponsorMessage (){
+        sql = "select * from push_message where userName= ?";
+        return jdbcTemplate.query(sql , pushMessageInfoRowMapper , "Sponsor");
+    }
+
+    @Transactional (readOnly = true)
     public PushMessageInfo getPushMessageById (int id){
         sql = "select * from push_message where id=?";
         return jdbcTemplate.queryForObject(sql , pushMessageInfoRowMapper , id);
