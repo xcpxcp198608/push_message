@@ -37,7 +37,7 @@
         <br/><br/><br/>
         <table border="1" cellpadding="0" cellspacing="0" width="100%">
             <thead>
-                <tr align="center"><td>Time</td><td>Message</td><td>Image1</td><td>Update</td><td>Delete</td></tr>
+                <tr align="center"><td>Time</td><td>Message</td><td>Image</td><td>Update</td><td>Delete</td></tr>
             </thead>
             <tbody>
                 <s:iterator value="pushMessageInfoList">
@@ -51,6 +51,10 @@
                 </s:iterator>
             </tbody>
         </table>
+    </div>
+
+    <div id="foot">
+        <a id="copyright">POWERED BY LD Copyright © 2017 LD All Rights Reserved</a>
     </div>
 
 </body>

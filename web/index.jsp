@@ -23,6 +23,15 @@
 
   <link rel="stylesheet" type="text/css" href="css/base.css" />
   <link rel="shortcut icon" href="img/btv.ico" />
+  <script type="application/javascript">
+    var userName = $(input_userName);
+    userName.addEventListener("onblur" , function () {
+      if(userName.value == null){
+          alert("input error")
+      }
+    } ,false)
+
+  </script>
 
 </head>
 
@@ -30,7 +39,8 @@
 
   <div id="login">
     <s:form method="POST" namespace="/" action="login" theme="simple">
-      <s:textfield name="managerInfo.userName" class="input"/>
+      <s:textfield name="managerInfo.userName" class="input" id="input_userName"/>
+
       <br/>
       <s:textfield name="managerInfo.password" type="password" class="input"/>
       <br/><br/>

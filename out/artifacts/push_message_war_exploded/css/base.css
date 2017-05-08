@@ -4,13 +4,7 @@ div,body,table,a,img,ul,li{
 }
 
 .img {
-    width: 150px;
-}
-
-#head {
     width: 100%;
-    height: 70px;
-    background-color: cornflowerblue;
 }
 
 #title {
@@ -25,23 +19,77 @@ div,body,table,a,img,ul,li{
 
 #add {
     display: block;
-    float: right;
+    float: left;
+    width: 100%;
+    font-size: 20px;
+    background-color: chocolate;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#login {
+    width:80%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.bt_login{
+    font-size: 20px;
+    width: 100%;
+}
+
+.bt_login1{
+    font-size: 16px;
+    width: 80%;
+}
+
+.input {
+    width: 100%;
+    font-size: 20px;
+}
+
+.input1{
+    font-size: 15px;
+    width: 100%;
+}
+
+#head {
+    width: 100%;
+    height: 70px;
+    background-color: cornflowerblue;
 }
 
 #content {
-    width: 1200px;
+    width: 90%;
     min-height: 530px;
     margin: auto;
 }
 
-#login {
-    position: fixed;
-    top: 50%;
-    bottom: 50%;
-    left: 50%;
-    right: 50%;
+#preview {
+    display: block;
+    width: 50%;
 }
 
-.input {
-    font-size: 20px;
+#foot {
+    width: 90%;
+    margin: auto;
+}
+
+#foot_icon{
+    width:20px;
+    height:20px;
+    margin-top: 10px;
+    float: left;
+}
+
+#copyright {
+    height:40px;
+    line-height: 40px;
+    color: #5a5a5a;
+    font-size: 11px;
+    text-align: center;
+    display: block;
+    float: left;
 }

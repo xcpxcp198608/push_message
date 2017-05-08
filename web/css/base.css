@@ -50,6 +50,11 @@ div,body,table,a,img,ul,li{
     font-size: 20px;
 }
 
+.input1{
+    font-size: 15px;
+    width: 100%;
+}
+
 #head {
     width: 100%;
     height: 70px;
@@ -65,4 +70,26 @@ div,body,table,a,img,ul,li{
 #preview {
     display: block;
     width: 50%;
+}
+
+#foot {
+    width: 90%;
+    margin: auto;
+}
+
+#foot_icon{
+    width:20px;
+    height:20px;
+    margin-top: 10px;
+    float: left;
+}
+
+#copyright {
+    height:40px;
+    line-height: 40px;
+    color: #5a5a5a;
+    font-size: 11px;
+    text-align: center;
+    display: block;
+    float: left;
 }
