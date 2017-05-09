@@ -55,7 +55,7 @@
     </div>
 
     <div id="foot">
-        <a id="copyright">POWERED BY LD Copyright © 2017 LD All Rights Reserved</a>
+        <a id="copyright">POWERED BY WIATEC Copyright © 2017 WIATEC All Rights Reserved</a>
     </div>
 
 </body>
