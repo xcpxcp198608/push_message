@@ -23,15 +23,7 @@
 
   <link rel="stylesheet" type="text/css" href="css/base.css" />
   <link rel="shortcut icon" href="img/btv.ico" />
-  <script type="application/javascript">
-    var userName = $(input_userName);
-    userName.addEventListener("onblur" , function () {
-      if(userName.value == null){
-          alert("input error")
-      }
-    } ,false)
 
-  </script>
 
 </head>
 
@@ -49,5 +41,6 @@
     <br/>
     <s:property value="loginStatus"/>
   </div>
+
 </body>
 </html>

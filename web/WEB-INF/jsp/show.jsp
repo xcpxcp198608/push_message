@@ -33,6 +33,7 @@
     <br/>
 
     <div id="content">
+        <a href="/push_message/logout" id="logout">Logout</a><br/><br/><br/>
         <a href="/push_message/edit" id="add">Add</a>
         <br/><br/><br/>
         <table border="1" cellpadding="0" cellspacing="0" width="100%">

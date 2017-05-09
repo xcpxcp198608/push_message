@@ -25,6 +25,11 @@ public class ActionManager extends BaseAction {
         }
     }
 
+    public String logout(){
+        session.invalidate();
+        return "logout";
+    }
+
     public ManagerInfo getManagerInfo() {
         return managerInfo;
     }
