@@ -33,8 +33,8 @@
     <br/>
 
     <div id="content">
-        <a href="/push_message/logout" id="logout">Logout</a><br/><br/><br/>
-        <a href="/push_message/edit" id="add">Add</a>
+        <a href="/LDFAM/logout" id="logout">Logout</a><br/><br/><br/>
+        <a href="/LDFAM/edit" id="add">Add</a>
         <br/><br/><br/>
         <table border="1" cellpadding="0" cellspacing="0" width="100%">
             <thead>
@@ -46,8 +46,8 @@
                     <td width="20%%">${time}</td>
                     <td width="20%">${message}</td>
                     <td width="20%" align="center"><a href="${img1}" target="_blank"><img src="${img1}" class="img"/></a></td>
-                    <td width="20%" align="center"><a href="/push_message/edit?id=${id}">Update</a></td>
-                    <td width="20%" align="center"><a href="/push_message/delete?id=${id}">Delete</a></td>
+                    <td width="20%" align="center"><a href="/LDFAM/edit?id=${id}">Update</a></td>
+                    <td width="20%" align="center"><a href="/LDFAM/delete?id=${id}">Delete</a></td>
                 </tr>
                 </s:iterator>
             </tbody>
@@ -55,7 +55,7 @@
     </div>
 
     <div id="foot">
-        <a id="copyright">POWERED BY LD Copyright © 2017 LD All Rights Reserved</a>
+        <a id="copyright">POWERED BY WIATEC Copyright © 2017 WIATEC All Rights Reserved</a>
     </div>
 
 </body>

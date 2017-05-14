@@ -23,7 +23,13 @@ public class PushMessageService {
     @Transactional (readOnly = true)
     public List<PushMessageInfo> getAll(){
         List<PushMessageInfo> pushMessageInfoList = new ArrayList<>();
-        pushMessageInfoList.add(pushMessageDao.getAnnouncementMessage().get(0));
+        List<PushMessageInfo> announcementMessageInfoList = pushMessageDao.getAnnouncementMessage();
+        if(announcementMessageInfoList == null || announcementMessageInfoList.size() <=0 ){
+            //
+        }else{
+            Collections.reverse(announcementMessageInfoList);
+            pushMessageInfoList.add(announcementMessageInfoList.get(0));
+        }
         List<PushMessageInfo> pushMessageInfoList1 = pushMessageDao.getAll();
         Collections.reverse(pushMessageInfoList1);
         for(int i = 0 ; i < pushMessageInfoList1.size() ; i ++){

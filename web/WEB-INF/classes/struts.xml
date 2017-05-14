@@ -5,7 +5,9 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-
+    
+    <constant name="struts.multipart.maxSize" value="10485760"/>
+    
     <package name="default" extends="struts-default" namespace="/">
 
         <action name="login" class="com.wiatec.push_message.controller.ActionManager" method="login">
