@@ -23,7 +23,7 @@ public class PushMessageService {
     @Transactional (readOnly = true)
     public List<PushMessageInfo> getAll(){
         List<PushMessageInfo> pushMessageInfoList = new ArrayList<>();
-        List<PushMessageInfo> announcementMessageInfoList = pushMessageDao.getAnnouncementMessage();
+        List<PushMessageInfo> announcementMessageInfoList = pushMessageDao.getPushMessageByUserName("Announcement");
         if(announcementMessageInfoList == null || announcementMessageInfoList.size() <=0 ){
             //
         }else{
@@ -32,13 +32,26 @@ public class PushMessageService {
         }
         List<PushMessageInfo> pushMessageInfoList1 = pushMessageDao.getAll();
         Collections.reverse(pushMessageInfoList1);
-        for(int i = 0 ; i < pushMessageInfoList1.size() ; i ++){
+        int count = 0 ;
+        if(pushMessageInfoList1.size() <= 100){
+            count = pushMessageInfoList1.size();
+        }else{
+            count = 100;
+        }
+        for(int i = 0 ; i < count ; i ++){
             PushMessageInfo pushMessageInfo = pushMessageInfoList1.get(i);
             if(!"Announcement".equals(pushMessageInfo.getUserName())){
-                if(!"Sponsor".equals(pushMessageInfo.getUserName())) {
+                if(!"Sponsor".equals(pushMessageInfo.getUserName()) && !"Tips & Tricks".equals(pushMessageInfo.getUserName())) {
                     pushMessageInfoList.add(pushMessageInfo);
                     if (i != 0 && i % 5 == 0) {
-                        pushMessageInfoList.add(getSponsorMessage());
+                        PushMessageInfo p1 = getRandomMessage("Sponsor");
+                        if(p1 != null){
+                            pushMessageInfoList.add(p1);
+                        }
+                        PushMessageInfo p2 = getRandomMessage("Tips & Tricks");
+                        if(p2 != null){
+                            pushMessageInfoList.add(p2);
+                        }
                     }
                 }
             }
@@ -47,12 +60,17 @@ public class PushMessageService {
     }
 
     @Transactional (readOnly = true)
-    public PushMessageInfo getSponsorMessage(){
-        List<PushMessageInfo> list = pushMessageDao.getSponsorMessage();
-        Random random = new Random();
-        int i = random.nextInt(list.size());
-        return list.get(i);
+    public PushMessageInfo getRandomMessage(String name){
+        List<PushMessageInfo> list = pushMessageDao.getPushMessageByUserName(name);
+        if(list == null || list.size()<=0){
+            return null;
+        }else {
+            Random random = new Random();
+            int i = random.nextInt(list.size());
+            return list.get(i);
+        }
     }
+
 
     @Transactional (readOnly = true)
     public List<PushMessageInfo> getPushMessageByUserName(String userName){
