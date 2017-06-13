@@ -32,6 +32,7 @@
 <body>
     <h2>Sorry , there is a error</h2>
     <hr/>
-    <s:property value="exception.message"/>
+    <s:property value="exception.message"/><br/>
+    <s:property value="exception.cause.detailMessage"/>
 </body>
 </html>
