@@ -1,11 +1,13 @@
 package com.wiatec.push_message.service;
 
+import com.wiatec.push_message.Constant;
 import com.wiatec.push_message.entities.PushMessageInfo;
 import com.wiatec.push_message.repository.PushMessageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -88,7 +90,23 @@ public class PushMessageService {
         if(id <= 0){
             return null;
         }else {
-            return pushMessageDao.getPushMessageById(id);
+            PushMessageInfo pushMessageInfo = pushMessageDao.getPushMessageById(id);
+            try {
+                String img = pushMessageInfo.getImg1();
+                if (img != null && !img.equals("")) {
+                    String[] imgs = img.split("/");
+                    String fileName = imgs[imgs.length - 1];
+                    String filePath = Constant.IMAGE_PATH + fileName;
+                    File file = new File(filePath);
+                    if (file.exists()) {
+                        file.delete();
+                    }
+                }
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+                return pushMessageInfo;
+            }
+            return pushMessageInfo;
         }
     }
 

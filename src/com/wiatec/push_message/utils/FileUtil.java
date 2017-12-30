@@ -6,9 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import javax.servlet.ServletContext;
-
-import org.apache.struts2.ServletActionContext;
+import com.wiatec.push_message.Constant;
 
 public class FileUtil {
 	
@@ -17,11 +15,11 @@ public class FileUtil {
 		if(file == null || fileFileName == null){
 			return flag;
 		}
-		File file1 = new File(getPath());
+		File file1 = new File(Constant.IMAGE_PATH);
 		if(!file1.exists()){
 			file1.mkdir();
 		}
-		String dir = getPath()+"/"+fileFileName;
+		String dir = Constant.IMAGE_PATH + fileFileName;
 		FileOutputStream fileOutputStream = null;
 		FileInputStream fileInputStream = null;
 		try {
@@ -33,6 +31,7 @@ public class FileUtil {
 				fileOutputStream.write(buffer , 0 , length);
 			}
 			flag = true;
+			Runtime.getRuntime().exec("chmod 755 " + dir);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			flag = false;
@@ -54,9 +53,5 @@ public class FileUtil {
 		return flag;
 	}
 
-	public static String getPath(){
-		ServletContext servletContext = ServletActionContext.getServletContext();
-		return servletContext.getRealPath("/image/");
-	}
 
 }

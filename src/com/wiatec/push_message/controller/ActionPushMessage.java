@@ -23,7 +23,7 @@ public class ActionPushMessage extends BaseAction {
     private List<String> fileFileName;
     private List<String> fileContentType;
     private String uploadStatus;
-    private String imagePath = "http://appota.gobeyondtv.co:8081/push_message/out/artifacts/push_message_war_exploded/image/";
+    private String imagePath = "http://www.ldlegacy.com:8899/static/ldfam/image/";
     @Autowired
     private PushMessageService pushMessageService;
 
